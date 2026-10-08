@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Great+Vibes&display=swap");
+
+:root {
+  --ivory: #f8f3e9;
+  --ivory-light: #fcf9f2;
+  --ivory-deep: #eee4d4;
+
+  --cocoa: #55483c;
+  --cocoa-dark: #40372f;
+  --warm-brown: #75685a;
+
+  --taupe: #9b8b7a;
+  --soft-taupe: #b4a596;
+  --light-taupe: #d8cdc0;
+
+  --champagne: #b69a68;
+  --champagne-light: #d8c59a;
+
+  --sage: #68776a;
+  --deep-sage: #435348;
+
+  --text: #40382f;
+  --text-muted: #756b60;
+  --white: #fffdf8;
+
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "DM Sans", sans-serif;
+  --script: "Great Vibes", cursive;
+
+  --transition-fast: 0.3s ease;
+  --transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--ivory);
+  color: var(--text);
+  font-family: var(--serif);
+}
+
+body.opening-active {
+  overflow: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--champagne-light);
+  color: var(--cocoa-dark);
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--soft-taupe);
+  border-radius: 20px;
+}

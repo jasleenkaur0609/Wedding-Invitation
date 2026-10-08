@@ -1,0 +1,151 @@
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.section-inner {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  margin-bottom: 12px;
+
+  color: var(--warm-brown);
+
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 0;
+
+  color: var(--cocoa);
+
+  font-family: var(--serif);
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 400;
+  font-style: italic;
+
+  line-height: 0.95;
+}
+
+.section-subtitle {
+  max-width: 620px;
+  margin: 20px auto 0;
+
+  color: var(--text-muted);
+
+  font-family: var(--serif);
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+.gold-line {
+  width: 90px;
+  height: 1px;
+
+  margin: 24px auto;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--champagne),
+    transparent
+  );
+}
+
+.ornamental-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin: 24px auto;
+}
+
+.ornamental-line::before,
+.ornamental-line::after {
+  content: "";
+
+  width: 60px;
+  height: 1px;
+
+  background: var(--soft-taupe);
+}
+
+.ornamental-line span {
+  width: 5px;
+  height: 5px;
+
+  border: 1px solid var(--champagne);
+
+  transform: rotate(45deg);
+}
+
+.luxury-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 170px;
+
+  padding: 13px 26px;
+
+  border: 1px solid var(--soft-taupe);
+  border-radius: 999px;
+
+  background: var(--cocoa);
+  color: var(--ivory);
+
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.luxury-button:hover {
+  background: var(--cocoa-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(64, 55, 47, 0.18);
+}
+
+.luxury-button.secondary {
+  background: transparent;
+  color: var(--cocoa);
+}
+
+.luxury-button.secondary:hover {
+  background: var(--ivory-deep);
+}
+
+@media (max-width: 700px) {
+  .section-inner {
+    width: 88%;
+  }
+
+  .section-title {
+    font-size: 48px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+  }
+}

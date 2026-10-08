@@ -1,0 +1,600 @@
+.opening {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100dvh;
+  min-height: 100dvh;
+
+  z-index: 1000;
+
+  display: grid;
+  place-items: center;
+
+  padding: 20px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(255, 250, 239, 0.15),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 8% 80%,
+      rgba(104, 119, 106, 0.28),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 92% 20%,
+      rgba(182, 154, 104, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #39483f 0%,
+      #536157 45%,
+      #35423a 100%
+    );
+
+  isolation: isolate;
+
+  cursor: pointer;
+}
+
+.opening::before {
+  content: "";
+
+  position: absolute;
+  inset: 14px;
+
+  border: 1px solid rgba(216, 197, 154, 0.58);
+
+  border-radius:
+    180px 180px
+    25px 25px;
+
+  pointer-events: none;
+}
+
+.opening::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 25%,
+      rgba(30, 34, 30, 0.2) 100%
+    );
+
+  pointer-events: none;
+}
+
+.opening-arch {
+  position: absolute;
+
+  top: 3vh;
+  left: 50%;
+
+  width: min(94vw, 760px);
+  height: 94vh;
+
+  transform: translateX(-50%);
+
+  border:
+    1px solid
+    rgba(216, 197, 154, 0.62);
+
+  border-bottom: 0;
+
+  border-radius:
+    380px 380px
+    0 0;
+
+  box-shadow:
+    0 0 0 8px rgba(216, 197, 154, 0.025),
+    0 0 70px rgba(216, 197, 154, 0.08);
+
+  animation:
+    openingArchIn 2s cubic-bezier(.16,1,.3,1) both;
+}
+
+.opening-arch::before {
+  content: "";
+
+  position: absolute;
+  inset: 18px;
+
+  border:
+    1px solid
+    rgba(248, 243, 233, 0.28);
+
+  border-bottom: 0;
+
+  border-radius:
+    360px 360px
+    0 0;
+}
+
+.opening-arch::after {
+  content: "";
+
+  position: absolute;
+  inset: 38px;
+
+  border:
+    1px solid
+    rgba(216, 197, 154, 0.16);
+
+  border-bottom: 0;
+
+  border-radius:
+    340px 340px
+    0 0;
+}
+
+.opening-glow {
+  position: absolute;
+
+  width: min(80vw, 620px);
+  height: min(80vw, 620px);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(248, 243, 233, 0.18),
+      rgba(182, 154, 104, 0.06) 38%,
+      transparent 70%
+    );
+
+  filter: blur(5px);
+
+  animation:
+    openingGlow 5s ease-in-out infinite;
+}
+
+.opening-card {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(88vw, 555px);
+
+  padding:
+    42px 40px
+    30px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 253, 247, 0.995),
+      rgba(244, 237, 224, 0.99)
+    );
+
+  border:
+    1px solid
+    rgba(155, 139, 122, 0.55);
+
+  box-shadow:
+    0 45px 110px rgba(35, 39, 34, 0.34),
+    0 0 0 8px rgba(248, 243, 233, 0.035);
+
+  border-radius: 3px;
+
+  animation:
+    openingCardIn 1.5s
+    0.25s
+    cubic-bezier(.16,1,.3,1)
+    both;
+}
+
+.opening-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 12px;
+
+  border:
+    1px solid
+    rgba(155, 139, 122, 0.3);
+
+  pointer-events: none;
+}
+
+.opening-card__eyebrow {
+  position: relative;
+  z-index: 2;
+
+  color: var(--warm-brown);
+
+  font-family: var(--sans);
+  font-size: 9px;
+
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.opening-card__divider {
+  width: 85px;
+  height: 1px;
+
+  margin: 15px auto;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--champagne),
+      transparent
+    );
+}
+
+.opening-card__monogram {
+  position: relative;
+  z-index: 2;
+
+  width: min(70vw, 310px);
+
+  margin:
+    0 auto
+    2px;
+
+  animation:
+    monogramReveal
+    1.2s
+    0.85s
+    cubic-bezier(.16,1,.3,1)
+    both;
+}
+
+.opening-card__monogram img {
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 5px 7px
+      rgba(79, 56, 38, 0.1)
+    );
+}
+
+.opening-card__message {
+  position: relative;
+  z-index: 2;
+
+  max-width: 405px;
+
+  margin:
+    0 auto;
+
+  color: var(--text-muted);
+
+  font-family: var(--serif);
+  font-size: 15px;
+
+  line-height: 1.65;
+
+  animation:
+    openingReveal
+    1s
+    1.35s
+    both;
+}
+
+.opening-card__names {
+  position: relative;
+  z-index: 2;
+
+  margin:
+    18px 0
+    7px;
+
+  color: var(--cocoa);
+
+  font-family: var(--serif);
+  font-size: clamp(42px, 7vw, 55px);
+
+  font-weight: 500;
+  font-style: italic;
+
+  line-height: 0.98;
+
+  animation:
+    openingReveal
+    1s
+    1.65s
+    both;
+}
+
+.opening-card__date {
+  position: relative;
+  z-index: 2;
+
+  color: var(--warm-brown);
+
+  font-family: var(--sans);
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  animation:
+    openingReveal
+    1s
+    1.85s
+    both;
+}
+
+.opening-card__seal {
+  position: relative;
+  z-index: 2;
+
+  width: 76px;
+  height: 76px;
+
+  margin:
+    21px auto
+    15px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(126, 103, 70, 0.7);
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #d9c394,
+      #b69a68 62%,
+      #8d744d 100%
+    );
+
+  color: #fff9ed;
+
+  font-family: var(--serif);
+  font-size: 23px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px
+    rgba(66, 53, 38, 0.25),
+    inset 0 0 0 2px
+    rgba(255, 244, 210, 0.2);
+
+  animation:
+    sealReveal
+    1s
+    2s
+    both;
+
+  transition:
+    transform var(--transition-fast);
+}
+
+.opening-card__seal:hover {
+  transform:
+    scale(1.07)
+    rotate(-3deg);
+}
+
+.opening-card__button {
+  position: relative;
+  z-index: 2;
+
+  padding:
+    12px 27px;
+
+  border:
+    1px solid
+    var(--soft-taupe);
+
+  border-radius: 999px;
+
+  background: var(--cocoa);
+
+  color: var(--ivory);
+
+  font-family: var(--sans);
+  font-size: 10px;
+
+  letter-spacing: 2.5px;
+
+  cursor: pointer;
+
+  animation:
+    openingReveal
+    1s
+    2.25s
+    both;
+
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.opening-card__button:hover {
+  background: var(--cocoa-dark);
+
+  transform:
+    translateY(-2px);
+}
+
+.opening-hint {
+  position: absolute;
+
+  z-index: 6;
+
+  bottom: 22px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: rgba(248, 243, 233, 0.7);
+
+  font-family: var(--sans);
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  animation:
+    openingHint 2s ease-in-out infinite;
+}
+
+.opening--closing {
+  animation:
+    openingExit
+    0.9s
+    cubic-bezier(.7,0,.3,1)
+    forwards;
+
+  pointer-events: none;
+}
+
+@keyframes openingArchIn {
+  from {
+    opacity: 0;
+    transform:
+      translateX(-50%)
+      scale(.9);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateX(-50%)
+      scale(1);
+  }
+}
+
+@keyframes openingGlow {
+  50% {
+    transform: scale(1.08);
+    opacity: .7;
+  }
+}
+
+@keyframes openingCardIn {
+  from {
+    opacity: 0;
+    transform:
+      translateY(70px)
+      rotateX(8deg)
+      scale(.93);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes openingReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes monogramReveal {
+  from {
+    opacity: 0;
+    transform:
+      translateY(16px)
+      scale(.94);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes sealReveal {
+  from {
+    opacity: 0;
+    transform:
+      scale(.45)
+      rotate(-20deg);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      scale(1)
+      rotate(0);
+  }
+}
+
+@keyframes openingHint {
+  50% {
+    opacity: .35;
+    transform:
+      translateX(-50%)
+      translateY(4px);
+  }
+}
+
+@keyframes openingExit {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1.06);
+    filter: blur(5px);
+  }
+}
+
+@media (max-width: 700px) {
+  .opening {
+    padding: 14px;
+  }
+
+  .opening-card {
+    width: min(92vw, 470px);
+    padding: 34px 22px 25px;
+  }
+
+  .opening-card__monogram {
+    width: min(72vw, 285px);
+  }
+
+  .opening-card__message {
+    font-size: 14px;
+  }
+
+  .opening-card__names {
+    font-size: 42px;
+  }
+
+  .opening-arch {
+    width: 96vw;
+    height: 88vh;
+  }
+}

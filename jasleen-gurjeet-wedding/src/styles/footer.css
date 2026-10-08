@@ -1,0 +1,73 @@
+.wedding-footer {
+  position: relative;
+
+  padding:
+    110px 20px
+    70px;
+
+  text-align: center;
+
+  background:
+    #35423a;
+
+  color: var(--ivory);
+
+  overflow: hidden;
+}
+
+.wedding-footer::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 70%;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--champagne),
+      transparent
+    );
+}
+
+.wedding-footer__monogram {
+  width: 150px;
+
+  margin:
+    0 auto
+    25px;
+}
+
+.wedding-footer__monogram img {
+  width: 100%;
+}
+
+.wedding-footer__title {
+  margin: 0;
+
+  color: var(--ivory);
+
+  font-family: var(--serif);
+  font-size: clamp(40px, 6vw, 68px);
+
+  font-style: italic;
+  font-weight: 400;
+}
+
+.wedding-footer__date {
+  margin-top: 20px;
+
+  color: var(--champagne-light);
+
+  font-family: var(--sans);
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
