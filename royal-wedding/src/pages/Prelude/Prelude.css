@@ -1,0 +1,294 @@
+
+.prelude-page {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    url("../../assets/images/wedding-background.png")
+    center / cover no-repeat,
+    #f3e4d1;
+  color: #633746;
+}
+
+.prelude-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 248, 235, 0.3),
+    rgba(255, 246, 229, 0.56)
+  );
+}
+
+.prelude-content {
+  width: min(100%, 620px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: preludeReveal 1.8s ease both;
+}
+
+.prelude-emblem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #b38a4e;
+  outline: 1px solid rgba(179, 138, 78, 0.6);
+  outline-offset: 5px;
+  border-radius: 50%;
+  background: rgba(255, 249, 238, 0.78);
+  box-shadow: 0 10px 40px rgba(90, 57, 39, 0.12);
+  color: #633746;
+  font-family: Georgia, serif;
+  font-size: 31px;
+}
+
+.prelude-emblem i {
+  color: #b38a4e;
+  font-size: 25px;
+}
+
+.prelude-emblem-ornament {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  padding: 0 8px;
+  background: #f7ecdd;
+  color: #b38a4e;
+  font-size: 20px;
+  transform: translateX(-50%);
+}
+
+.prelude-kicker {
+  margin: 34px 0 0;
+  color: #8b6b4b;
+  font-size: 10px;
+  letter-spacing: 5px;
+}
+
+.prelude-title {
+  margin: 25px 0 0;
+  color: #633746;
+  font-family: "Bodoni MT", Didot, Georgia, serif;
+  font-size: clamp(44px, 7vw, 76px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.prelude-title span {
+  display: block;
+  margin-top: 8px;
+  color: #a17a48;
+  font-style: italic;
+}
+
+.prelude-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 25px;
+  color: #b38a4e;
+  font-size: 18px;
+}
+
+.prelude-divider span {
+  width: 55px;
+  height: 1px;
+  background: #b38a4e;
+}
+
+.prelude-description {
+  max-width: 410px;
+  margin: 20px 0 0;
+  color: #795f4d;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.prelude-names {
+  margin: 25px 0 0;
+  color: #633746;
+  font-family: Georgia, serif;
+  font-size: 24px;
+}
+
+.prelude-names span {
+  color: #b38a4e;
+  font-style: italic;
+}
+
+.prelude-date {
+  margin: 12px 0 0;
+  color: #8b6b4b;
+  font-size: 10px;
+  letter-spacing: 5px;
+}
+
+.prelude-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 52px;
+  margin-top: 30px;
+  padding: 14px 24px;
+  border: 1px solid #d7b77e;
+  outline: 1px solid rgba(99, 55, 70, 0.3);
+  outline-offset: 4px;
+  background: linear-gradient(110deg, #75444a, #58303d);
+  color: #fff6e6;
+  font-size: 10px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.prelude-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(88, 48, 61, 0.2);
+}
+
+.prelude-button span {
+  color: #e6c68b;
+  font-size: 18px;
+}
+
+.prelude-footer {
+  margin: 34px 0 0;
+  color: #8b6b4b;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.prelude-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.prelude-particle {
+  position: absolute;
+  left: var(--x);
+  bottom: -15px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #c49a55;
+  box-shadow: 0 0 12px 3px rgba(196, 154, 85, 0.3);
+  opacity: 0;
+  animation: preludeFloat var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes preludeReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes preludeFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  15% {
+    opacity: 0.7;
+  }
+  85% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-105vh);
+  }
+}
+
+@media (max-height: 720px) {
+  .prelude-emblem {
+    width: 76px;
+    height: 76px;
+    font-size: 25px;
+  }
+
+  .prelude-kicker {
+    margin-top: 24px;
+  }
+
+  .prelude-title {
+    margin-top: 18px;
+    font-size: clamp(38px, 6vh, 58px);
+  }
+
+  .prelude-divider {
+    margin-top: 15px;
+  }
+
+  .prelude-description {
+    margin-top: 12px;
+    font-size: 14px;
+  }
+
+  .prelude-names {
+    margin-top: 15px;
+    font-size: 21px;
+  }
+
+  .prelude-button {
+    margin-top: 20px;
+  }
+
+  .prelude-footer {
+    margin-top: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .prelude-page {
+    padding: 20px;
+  }
+
+  .prelude-kicker {
+    letter-spacing: 3px;
+  }
+
+  .prelude-title {
+    font-size: clamp(43px, 11vw, 60px);
+  }
+
+  .prelude-description {
+    font-size: 15px;
+  }
+
+  .prelude-footer {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prelude-content,
+  .prelude-particle {
+    animation: none;
+  }
+}
